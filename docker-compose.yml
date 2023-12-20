@@ -1,0 +1,10 @@
+version: "3.9"
+services:
+  app:
+    build: .
+    container_name: products-frontend
+    volumes:
+      - ./app:/var/www/html/app
+      - ./config/virtualhosts/products.dev.com:/etc/nginx/sites-enabled/products.dev.com
+    ports:
+      - "80:80"
